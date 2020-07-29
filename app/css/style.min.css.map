@@ -1,0 +1,1 @@
+{"version":3,"sources":["style.scss"],"names":[],"mappings":"AAIA,OACC,qBAAsB","file":"style.min.css","sourcesContent":["// font-family: 'Kaushan Script', cursive;\r\n// font-family: 'Montserrat', sans-serif;\r\n// font-family: 'Roboto', sans-serif;\r\n\r\n.block {\r\n\tbackground-color: #ccc;\r\n}"]}
