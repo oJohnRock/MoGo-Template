@@ -67,7 +67,8 @@ function build() {
   return src([
     'app/**/*.html',
     'app/css/**/*.min.css',
-    'app/js/**/*.min.js'
+    'app/js/**/*.min.js',
+    'app/img/dest/**/*'
     ], { base: 'app'})
   .pipe( dest('dist') );
 }

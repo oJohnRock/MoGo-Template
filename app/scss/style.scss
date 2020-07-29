@@ -1,3 +1,182 @@
-// font-family: 'Kaushan Script', cursive;
-// font-family: 'Montserrat', sans-serif;
-// font-family: 'Roboto', sans-serif;
+/* Шрифты */
+%Kaushan {
+	font-family: 'Kaushan Script', cursive;
+	font-weight: 400;
+}
+%Mont-reg {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+}
+%Mont-bold {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+}
+%Roboto-reg {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+}
+%Roboto-italic {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-style: italic;
+}
+
+
+/* Цвета */
+$bg-color-1: 		#f38181;
+$bg-color-2: 		#fce38a;
+$bg-color-3: 		#f8f8f8;
+$icon-color-1: 	#95e1d3;
+$icon-color-2: 	#cccccc;
+$title-color: 	#333333;
+$tetx-color: 		#999999;
+$border-color: 	#e5e5e5;
+$bg-gradient: linear-gradient(
+	to bottom, 
+	rgba(243, 129, 129, .9), 
+	rgba(252, 227, 138, .9));
+
+/* Базовые настройки */
+:root {
+	font-size: 10px;
+}
+body {
+	@extend %Mont-reg;
+}
+a {
+	text-decoration: none;
+}
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+.container {
+	max-width: 1230px;
+	padding: 0 1.5rem;
+	margin: 0 auto;
+}
+
+
+/* Header */
+.header {
+	width: 100%;
+	height: 100vh;
+	color: #fff;
+	background: $bg-gradient, url('../img/dest/header/header-bg.jpg') no-repeat center;
+	background-size: cover;
+
+	&__nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 2.8rem 0;
+	}
+}
+
+/* Нав-меню */
+.logo {
+	@extend %Mont-bold;
+	font-size: 3rem;
+}
+
+.nav-list {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	&__item {
+		margin-left: 4rem;
+	}
+
+	&__link {
+		position: relative;
+		padding: 1rem;
+		font-size: 1.4rem;
+		text-transform: uppercase;
+		color: #fff;
+		transition: .1s;
+
+		&:hover {
+			color: $bg-color-2;
+		}
+
+		&::after {
+			position: absolute;
+			display: block;
+			content: "";
+			width: 0;
+			height: 0.3rem;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			transition: .1s;
+		}
+
+		&:hover::after {
+			width: 100%;
+			background-color: $bg-color-2;
+		}
+	}
+
+	&__icon {
+		font-size: 1.8rem;
+	}
+}
+
+.search-form {
+  position: relative;
+
+  &__text {
+  	position: absolute;
+  	top: 0;
+  	right: 100%;
+  	display: inline-block;
+  	height: 100%;
+	  width: 0;
+	  padding: 1rem;
+	  font-size: 1.5rem;
+	  background-color: #fff;
+	  border: none;
+	  outline: none;
+	  border-bottom: .3rem solid $bg-color-2;
+	  opacity: 0;
+	  transition: .4s;
+
+	  &_active {
+	  	width: 30rem;
+	  	opacity: 1;
+	  }
+  }
+
+  &__btn {
+  	height: 100%;
+  	border: none;
+  	background-color: transparent;
+  	color: #fff;
+  	padding: 1rem;
+  	outline: none;
+  	cursor: pointer;
+
+  	&:hover {
+  		color: $bg-color-2;
+  	}
+
+  	&::after {
+  		position: absolute;
+  		display: block;
+  		content: "";
+  		width: 0;
+  		height: 0.3rem;
+  		bottom: 0;
+  		left: 50%;
+  		transform: translateX(-50%);
+  		transition: .1s;
+  	}
+
+  	&:hover::after {
+  		width: 100%;
+  		background-color: $bg-color-2;
+  	}
+  }
+}
